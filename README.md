@@ -1,6 +1,6 @@
 # JToolBar
 
-使用方法：<br><>
+
 Step 1. Add the JitPack repository to your build file 
 Add it in your root build.gradle at the end of repositories:<br>
 ```
