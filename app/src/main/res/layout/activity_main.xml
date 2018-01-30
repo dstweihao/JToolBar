@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              tools:context="com.wh.jtoolbar.MainActivity">
+
+    <com.wh.jtoolbar.JToolBar
+        android:id="@+id/jtoolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:leftBackground="#F11"
+        app:leftText="左按钮"
+        app:leftTextColor="#ffffff"
+        app:rightBackground="#fff222"
+        app:rightText="右按钮"
+        app:rightTextColor="@color/colorAccent"
+        app:title="自定义标题"
+        app:titleTextColor="@color/colorAccent"
+        app:titleTextSize="12dp"/>
+
+</LinearLayout>
