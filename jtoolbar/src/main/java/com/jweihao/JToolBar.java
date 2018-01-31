@@ -1,5 +1,6 @@
-package com.wh.jtoolbar;
+package com.jweihao;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
@@ -10,6 +11,8 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.wh.jtoolbar.R;
+
 /**
  * Created by weihao on 2018/1/30.
  */
@@ -17,24 +20,25 @@ import android.widget.TextView;
 public class JToolBar extends RelativeLayout {
 
 
-    private Drawable              mLeftBackground;
-    private int                   mLeftTextColor;
-    private String                mLeftText;
-    private Drawable              mRightBackground;
-    private int                   mRightTextColor;
-    private String                mRightText;
-    private float                 mTitleSize;
-    private int                   mTitleTextColor;
-    private String                mTitle;
-    private Button                mLeftButton;
-    private Button                mRightButton;
-    private TextView              mTitleView;
-    private LayoutParams          mLeftParams;
-    private LayoutParams          mRightParams;
-    private LayoutParams          mTitleParams;
+    private Drawable mLeftBackground;
+    private int mLeftTextColor;
+    private String mLeftText;
+    private Drawable mRightBackground;
+    private int mRightTextColor;
+    private String mRightText;
+    private float mTitleSize;
+    private int mTitleTextColor;
+    private String mTitle;
+    private Button mLeftButton;
+    private Button mRightButton;
+    private TextView mTitleView;
+    private LayoutParams mLeftParams;
+    private LayoutParams mRightParams;
+    private LayoutParams mTitleParams;
     private jToolBarClickListener mListener;
-    public static final int LEFT_BUTTON  = 0;
+    public static final int LEFT_BUTTON = 0;
     public static final int RIGHT_BUTTON = 1;
+    private Drawable mTitleBackground;
 
 
     public JToolBar(Context context) {
@@ -51,6 +55,7 @@ public class JToolBar extends RelativeLayout {
         initView(context, attrs);
     }
 
+    @SuppressLint("ResourceAsColor")
     private void initView(Context context, AttributeSet attrs) {
         //通过这个方法，将你在attrs.xml中定义的declare-styleable的所有属性的值
         //存储到TypedArray中
@@ -58,15 +63,15 @@ public class JToolBar extends RelativeLayout {
         //从TypedArray中取出对应的值来为要设置的属性赋值
         //左边按钮属性获取
         mLeftBackground = ta.getDrawable(R.styleable.JToolBar_leftBackground);
-        mLeftTextColor = ta.getColor(R.styleable.JToolBar_leftTextColor, 0);
+        mLeftTextColor = ta.getColor(R.styleable.JToolBar_leftTextColor,  R.color.black);
         mLeftText = ta.getString(R.styleable.JToolBar_leftText);
         //右边按钮属性获取
         mRightBackground = ta.getDrawable(R.styleable.JToolBar_rightBackground);
-        mRightTextColor = ta.getColor(R.styleable.JToolBar_rightTextColor, 0);
+        mRightTextColor = ta.getColor(R.styleable.JToolBar_rightTextColor,  R.color.black);
         mRightText = ta.getString(R.styleable.JToolBar_rightText);
         //标题属性获取
         mTitleSize = ta.getDimension(R.styleable.JToolBar_titleTextSize, 10);
-        mTitleTextColor = ta.getColor(R.styleable.JToolBar_titleTextColor, 0);
+        mTitleTextColor = ta.getColor(R.styleable.JToolBar_titleTextColor, R.color.black);
         mTitle = ta.getString(R.styleable.JToolBar_title);
         //获取完TypeArray的值后，一般都要调用recyle方法避免重新创建的时候的错误。
         ta.recycle();
@@ -96,6 +101,8 @@ public class JToolBar extends RelativeLayout {
         mTitleView.setTextColor(mTitleTextColor);
         mTitleView.setTextSize(mTitleSize);
 
+
+
         //为组件元素设置相应的布局元素
         mLeftParams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
         //为该控件设置在RelativeLayout中的位置
@@ -111,6 +118,9 @@ public class JToolBar extends RelativeLayout {
         mTitleParams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
         mTitleParams.addRule(RelativeLayout.CENTER_IN_PARENT, TRUE);
         addView(mTitleView, mTitleParams);
+
+
+
 
         //按钮的点击事件，不需要具体的实现
         //只需调用接口的方法，回调的时候，会有具体的实现

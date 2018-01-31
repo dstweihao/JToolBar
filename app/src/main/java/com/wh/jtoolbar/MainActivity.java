@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.jweihao.JToolBar;
+
 public class MainActivity extends AppCompatActivity {
 
     private JToolBar mJtoolbar;
@@ -26,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         //控制topbar上组件的状态
-        mJtoolbar.setButtonVisable(mJtoolbar.LEFT_BUTTON, true);
-        mJtoolbar.setButtonVisable(mJtoolbar.RIGHT_BUTTON, true);
+        mJtoolbar.setButtonVisable(JToolBar.LEFT_BUTTON, true);
+        mJtoolbar.setButtonVisable(JToolBar.RIGHT_BUTTON, true);
     }
 }

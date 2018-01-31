@@ -3,8 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JToolBar.iml" filepath="$PROJECT_DIR$/JToolBar.iml" />
+      <module fileurl="file://F:\github\JToolBar\JToolBar.iml" filepath="F:\github\JToolBar\JToolBar.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://F:\github\JToolBar\app\app.iml" filepath="F:\github\JToolBar\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/jtoolbar/jtoolbar.iml" filepath="$PROJECT_DIR$/jtoolbar/jtoolbar.iml" />
+      <module fileurl="file://F:\github\JToolBar\jtoolbar\jtoolbar.iml" filepath="F:\github\JToolBar\jtoolbar\jtoolbar.iml" />
     </modules>
   </component>
 </project>
