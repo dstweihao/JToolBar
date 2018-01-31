@@ -14,6 +14,7 @@ allprojects {
 
 Step 2. Add the dependency<br>
 ```
+
 dependencies {
 	compile 'com.github.jweihao:JToolBar:v1.0.1'
 }
